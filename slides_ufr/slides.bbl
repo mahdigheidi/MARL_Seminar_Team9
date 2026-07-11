@@ -1,0 +1,21 @@
+\begin{thebibliography}{CSA20}
+
+\bibitem[ACS24]{albrecht2024multi}
+Stefano~V Albrecht, Filippos Christianos, and Lukas Sch{\"a}fer.
+\newblock {\em Multi-agent reinforcement learning: Foundations and modern
+  approaches}.
+\newblock MIT Press, 2024.
+
+\bibitem[CSA20]{christianos2020shared}
+Filippos Christianos, Lukas Sch{\"a}fer, and Stefano Albrecht.
+\newblock Shared experience actor-critic for multi-agent reinforcement
+  learning.
+\newblock {\em Advances in neural information processing systems},
+  33:10707--10717, 2020.
+
+\bibitem[SB18]{sutton2018reinforcement}
+Richard~S Sutton and Andrew~G Barto.
+\newblock {\em Reinforcement learning: {A}n introduction}.
+\newblock MIT press, 2018.
+
+\end{thebibliography}

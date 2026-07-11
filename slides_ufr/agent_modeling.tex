@@ -1,0 +1,497 @@
+\section{Agent Modeling with Neural Networks}
+
+% =========================================================
+% Motivation: why agent modeling at all?
+% =========================================================
+\begin{frame}
+\frametitle{Why Agent Modeling?}
+
+\begin{itemize}
+    \item In \textbf{any} multi-agent environment, an agent must consider
+    the actions of other agents to learn an effective policy.
+    \item But so far, this happened only \emph{indirectly}:
+    \begin{itemize}
+        \item Independent learning: other agents only enter through the
+        training data they generate.
+        \item Multi-agent policy gradients / value decomposition:
+        centralized critics \emph{can} be conditioned on others' actions
+        --- but only during training.
+    \end{itemize}
+    \item Without explicit knowledge of others' policies:
+    \begin{itemize}
+        \item the environment appears \textbf{non-stationary} --- other
+        agents continually learn and change their policies,
+        \item we cannot select \textbf{best responses} to what others
+        will actually do.
+    \end{itemize}
+\end{itemize}
+
+\vspace{0.5em}
+\centering
+\textbf{Agent modeling:} explicitly model the policies of other agents\\
+$\Rightarrow$ predict their actions, adapt to their changing behavior.
+
+\end{frame}
+
+% =========================================================
+% Recap: tabular agent modeling (Section 6.3)
+% =========================================================
+\subsection{Joint action learning}
+\begin{frame}
+\frametitle{Recap: Tabular Agent Modeling (Section 6.3)}
+
+Idea (JAL-AM): count how often agent $j$ picked action $a_j$ in state $s$
+and use the \textbf{empirical action distribution} as a model:
+\[
+\hat{\pi}_j(a_j \mid s)
+=
+\frac{C(s, a_j)}{\sum_{a_j' \in A_j} C(s, a_j')}
+\]
+
+Act by best response against the models:
+\[
+AV_i(s, a_i)
+=
+\sum_{a_{-i} \in A_{-i}}
+Q_i(s, \langle a_i, a_{-i} \rangle)
+\prod_{j \ne i} \hat{\pi}_j(a_j \mid s)
+\]
+
+\vspace{0.4em}
+\begin{alertblock}{Limitation}
+Like tabular value functions, count-based models cannot
+\textbf{generalize} to novel states in which the actions of other
+agents have not been observed yet.
+\end{alertblock}
+
+\vspace{0.3em}
+\centering
+$\Rightarrow$ Use \textbf{deep neural networks} to learn generalizable
+agent models.
+
+\end{frame}
+
+% =========================================================
+% JAL with deep agent models: definition + model loss
+% =========================================================
+\begin{frame}
+\frametitle{Joint-Action Learning with Deep Agent Models}
+
+\begin{block}{Agent models}
+Each agent $i$ maintains agent models
+$\hat{\pi}_{-i}^{i} = \{\hat{\pi}_j^i\}_{j \ne i}$
+of the policies of all other agents, where $\hat{\pi}_j^i$ is the agent
+model maintained by agent $i$ for the policy of agent $j$ and is
+parameterized by $\phi_j^i$.
+\end{block}
+
+\begin{itemize}
+    \item Each model is a neural network:
+    \textbf{input} = observation history $h_i^t$ of agent $i$,
+    \textbf{output} = probability distribution over the actions of
+    agent $j$.
+    \item Trained during training time from the \emph{observed} actions
+    of other agents, by minimizing the cross-entropy loss:
+\end{itemize}
+
+\[
+\mathcal{L}(\phi_j^i)
+=
+- \log \hat{\pi}_j^i (a_j^t \mid h_i^t; \phi_j^i)
+\]
+
+\vspace{0.2em}
+{\small
+$=$ maximizing the likelihood of the observed action $a_j^t$ of agent $j$
+given agent $i$'s own observation history.}
+
+\end{frame}
+
+% =========================================================
+% Value function training (Eq 9.81)
+% =========================================================
+\begin{frame}
+\frametitle{Training the Joint-Action Value Function}
+
+Each agent additionally trains a \textbf{centralized action-value
+function} $Q(h_i, \langle a_i, a_{-i} \rangle; \theta_i)$, DQN-style, by
+minimizing:
+
+\begin{center}
+\adjustbox{max width=\linewidth}{$
+\mathcal{L}(\theta_i)
+=
+\frac{1}{B}
+\sum_{(h_i^t, a^t, r_i^t, h_i^{t+1}) \in B}
+\left(
+r_i^t
++ \gamma \max_{a_i' \in A_i} AV(h_i^{t+1}, a_i'; \bar{\theta}_i)
+- Q(h_i^t, \langle a_i^t, a_{-i}^t \rangle; \theta_i)
+\right)^{2}
+$}
+\end{center}
+
+\begin{itemize}
+    \item $\bar{\theta}_i$: parameters of the target network.
+    \item The target uses the \textbf{greedy action of agent $i$} and
+    the action probabilities of all other agents
+    \textbf{predicted by their agent models} --- how exactly?
+    $\rightarrow$ next slide.
+\end{itemize}
+
+\end{frame}
+
+% =========================================================
+% Action values with agent models (Eq 9.82, 9.83)
+% =========================================================
+\begin{frame}
+\frametitle{Action Values under the Agent Models}
+
+Expected value of action $a_i$, given what the models predict the
+others will do:
+
+\begin{align*}
+AV(h_i, a_i; \theta_i)
+&=
+\sum_{a_{-i} \in A_{-i}}
+Q(h_i, \langle a_i, a_{-i} \rangle; \theta_i)\,
+\hat{\pi}_{-i}^{i}(a_{-i} \mid h_i; \phi_{-i}^i)
+\\[0.4em]
+&=
+\sum_{a_{-i} \in A_{-i}}
+Q(h_i, \langle a_i, a_{-i} \rangle; \theta_i)
+\prod_{j \ne i}
+\hat{\pi}_j^i(a_j \mid h_i; \phi_j^i)
+\end{align*}
+
+\begin{itemize}
+    \item Same structure as tabular JAL-AM --- but now $Q$ and
+    $\hat{\pi}_j^i$ are neural networks conditioned on the observation
+    history.
+    \item \alert{Problem:} the sum runs over \textbf{all} joint actions
+    $a_{-i} \in A_{-i}$ --- intractable for many agents or large action
+    spaces.
+\end{itemize}
+
+\end{frame}
+
+% =========================================================
+% Sampling approximation (Eq 9.84)
+% =========================================================
+\begin{frame}
+\frametitle{Scaling Up: Sampled Action Values}
+
+Instead of enumerating all joint actions, \textbf{sample} $K$ joint
+actions from the agent models and average:
+
+\[
+AV(h_i, a_i; \theta_i)
+=
+\frac{1}{K}
+\sum_{k=1}^{K}
+Q(h_i, \langle a_i, a_{-i}^k \rangle; \theta_i),
+\qquad
+a_j^k \sim \hat{\pi}_j^i(\cdot \mid h_i)
+\]
+
+\begin{itemize}
+    \item More efficient, but may introduce additional variance.
+    \item In practice it can even help: sampling concentrates the value
+    estimation on the \emph{most likely} actions of the other agents ---
+    exactly where $Q$ has been trained the most.
+\end{itemize}
+
+\end{frame}
+
+% =========================================================
+% Algorithm 23, compressed to fit one slide
+% =========================================================
+\begin{frame}
+\frametitle{Deep joint-action learning}
+
+\scriptsize
+\begin{algorithmic}[1]
+
+\State Initialize $n$ value networks $\theta_1, \ldots, \theta_n$ and
+target networks $\bar{\theta}_1 = \theta_1, \ldots, \bar{\theta}_n = \theta_n$
+\State Initialize $n$ agent model networks
+$\phi_{-1}^{1}, \ldots, \phi_{-n}^{n}$ and replay buffers
+$D_1, \ldots, D_n$
+
+\For{time step $t = 0, 1, 2, \ldots$}
+    \State Collect current observations $o_1^t, \ldots, o_n^t$
+    \State For each agent $i$: with probability $\epsilon$ choose random
+    action $a_i^t$, else $a_i^t \in \arg\max_{a_i} AV(h_i, a_i; \theta_i)$
+    \State Apply actions $(a_1^t, \ldots, a_n^t)$; collect rewards
+    $r_1^t, \ldots, r_n^t$ and next observations
+    $o_1^{t+1}, \ldots, o_n^{t+1}$
+
+    \For{agent $i = 1, \ldots, n$}
+        \State Store $(h_i^t, a_i^t, r_i^t, h_i^{t+1})$ in $D_i$; sample
+        mini-batch of $B$ transitions $(h_i^k, a_i^k, r_i^k, h_i^{k+1})$
+        from $D_i$
+        \State Targets
+        $y_i^k \gets r_i^k$ if $s^{k+1}$ terminal, else
+        $y_i^k \gets r_i^k + \gamma
+        \max_{a_i' \in A_i} AV(h_i^{k+1}, a_i'; \bar{\theta}_i)$
+        \State Critic loss $\mathcal{L}(\theta_i) \gets
+        \frac{1}{B} \sum_{k=1}^{B}
+        \left( y_i^k - Q(h_i^k, \langle a_i^k, a_{-i}^k \rangle; \theta_i)
+        \right)^2$
+        \State Model loss $\mathcal{L}(\phi_{-i}^{i}) \gets
+        \sum_{j \ne i} \frac{1}{B} \sum_{k=1}^{B}
+        -\log \hat{\pi}_j^i(a_j^k \mid h_i^k; \phi_j^i)$
+        \State Update $\theta_i$ and $\phi_{-i}^{i}$ by minimizing
+        $\mathcal{L}(\theta_i)$ and $\mathcal{L}(\phi_{-i}^{i})$;
+        in a set interval update $\bar{\theta}_i \gets \theta_i$
+    \EndFor
+\EndFor
+
+\end{algorithmic}
+
+\end{frame}
+
+% =========================================================
+% Figure 9.20: JAL-AM in level-based foraging, two columns
+% =========================================================
+% TODO: crop Figure 9.20 (a) and (b) from the book PDF into these
+% two image files (or rename to match your media folder):
+\begin{frame}
+\frametitle{JAL-AM in Level-Based Foraging}
+
+\begin{columns}[T,onlytextwidth]
+
+\begin{column}{0.42\textwidth}
+\centering
+\includegraphics[width=\linewidth]{media/lbf_9_20a.png}
+
+\vspace{0.3em}
+{\small \textbf{(a)} Environment: $5\times 5$ grid, two agents must
+\emph{cooperate} to collect any item.}
+\end{column}
+
+\begin{column}{0.55\textwidth}
+\centering
+\includegraphics[width=\linewidth]{media/lbf_9_20b.png}
+
+\vspace{0.3em}
+{\small \textbf{(b)} Learning curves of IDQN, JAL-AM (exact), and
+JAL-AM (sampled, $K = 10$).}
+\end{column}
+
+\end{columns}
+
+\vspace{0.6em}
+\begin{itemize}
+    \item IDQN fails to reliably collect items; JAL-AM succeeds.
+    \item The \emph{sampled} variant learns faster and more reliably
+    than the exact one.
+\end{itemize}
+
+\vspace{0.2em}
+\centering
+{\small Figures taken from \cite{albrecht2024multi}.}
+
+\end{frame}
+
+% =========================================================
+% Learning representations: why + how
+% =========================================================
+\subsection{Learning representations}
+\begin{frame}
+\frametitle{Learning Representations of Agent Policies}
+
+Ideally, we would condition our policy and value function directly on
+the \textbf{policies of all other agents}. Why is that not feasible?
+
+\begin{itemize}
+    \item Other agents' policies may be available during centralized
+    \emph{training}, but not during decentralized \emph{execution}.
+    \item They may be \textbf{too complex} to represent explicitly:
+    e.g., the parameters $\phi_{-i} = \{\phi_j\}_{j \ne i}$ of their
+    policy networks are far too many to condition on.
+    \item They \textbf{change during learning} --- any fixed description
+    becomes stale.
+\end{itemize}
+
+\vspace{0.4em}
+\begin{block}{What we want instead}
+A \textbf{compact representation} $m_i^t$ of the other agents' policies
+that (i) can be inferred from agent $i$'s \emph{own} observations, and
+(ii) adapts as the other agents' policies change.
+\end{block}
+
+\vspace{0.3em}
+$\Rightarrow$ Learn it with an \textbf{encoder-decoder} architecture:
+the encoder $f^e$ maps $h_i^t$ to an embedding $m_i^t$, the decoder
+$f^d$ reconstructs the other agents' action probabilities from $m_i^t$.
+
+\end{frame}
+
+% =========================================================
+% Agent architecture with clean, orthogonal arrows
+% =========================================================
+\begin{frame}
+\frametitle{Agent Architecture}
+
+\centering
+\resizebox{0.9\textwidth}{!}{%
+\begin{tikzpicture}[
+    node distance=1.4cm and 1.2cm,
+    >=Latex,
+    every node/.style={font=\large},
+    box/.style={
+        draw,
+        rounded corners,
+        very thick,
+        minimum height=0.8cm,
+        inner xsep=10pt,
+        inner ysep=5pt
+    },
+    orangebox/.style={box, draw=orange!90!black, fill=orange!8},
+    bluebox/.style={box, draw=blue!55!black, fill=blue!8},
+    greenbox/.style={box, draw=green!55!black, fill=green!8},
+    arrow/.style={->, very thick, rounded corners=3pt}
+]
+
+\node (hi) {$h_i^t$};
+\node[orangebox, right=of hi] (fe) {$f^e(h_i^t;\psi_i^e)$};
+\node[right=of fe] (mi) {$m_i^t$};
+\node[bluebox, right=of mi] (fd) {$f^d(m_i^t;\psi_i^d)$};
+\node[right=of fd] (pihat) {$\hat{\pi}_{-i}^{i,t}$};
+\node[greenbox, above=1.3cm of fd] (pi) {$\pi(\cdot \mid h_i^t, m_i^t;\phi_i)$};
+\node[right=of pi] (ai) {$a_i^t$};
+
+% bottom row: straight horizontal arrows
+\draw[arrow] (hi) -- (fe);
+\draw[arrow] (fe) -- (mi);
+\draw[arrow] (mi) -- (fd);
+\draw[arrow] (fd) -- (pihat);
+
+% h_i -> policy: up, then straight into the west side of the policy box
+\draw[arrow] (hi.north) |- ($(pi.west)+(0,0.15)$);
+
+% m_i -> policy: up, then straight into the west side, slightly lower
+\draw[arrow] (mi.north) |- ($(pi.west)+(0,-0.15)$);
+
+% policy -> action
+\draw[arrow] (pi) -- (ai);
+
+% decoder branch is only used during training
+\node[font=\small, text=black!60, below=0.15cm of pihat] {(training only)};
+
+\end{tikzpicture}%
+}
+
+\vspace{0.8em}
+\begin{itemize}
+    \item During \textbf{training}, the decoder $f^d$ reconstructs the
+    action probabilities of all other agents from $m_i^t$.
+    \item During \textbf{execution}, the embedding $m_i^t$ conditions
+    the policy of the agent.
+\end{itemize}
+
+\end{frame}
+
+% =========================================================
+% Encoder-decoder training loss (Eq 9.85)
+% =========================================================
+\begin{frame}
+\frametitle{Opponent Model Loss}
+
+Encoder and decoder are \textbf{jointly} trained to minimize the
+cross-entropy between predicted action probabilities and the true
+actions of all other agents:
+
+\begin{equation*}
+\mathcal{L}(\psi_i^e, \psi_i^d)
+=
+\sum_{j \ne i}
+-\log \hat{\pi}_j^{i,t}(a_j^t)
+\quad
+\text{with}
+\quad
+\hat{\pi}_j^{i,t}
+=
+f^d
+\left(
+f^e(h_i^t; \psi_i^e);
+\psi_i^d
+\right)
+\end{equation*}
+
+\begin{itemize}
+    \item The encoder is thereby pushed to store in $m_i^t$ exactly the
+    information that is \emph{indicative of the other agents' action
+    selection}.
+    \item Gradients of the MARL training are \textbf{stopped} from
+    flowing into the encoder --- it is trained purely by this
+    reconstruction loss.
+    \item \textbf{Algorithm-agnostic:} any MARL algorithm can condition
+    its policy $\pi(\cdot \mid h_i, m_i; \phi_i)$ and value function
+    $V(h_i, z, m_i; \theta_i)$ on the learned representations.
+\end{itemize}
+
+\end{frame}
+
+% =========================================================
+% (Optional) Figure 9.22: centralized A2C with/without AM
+% TODO: crop Figure 9.22 (a) and (b) from the book PDF into these
+% two image files, or delete this frame if you don't want it:
+% =========================================================
+\begin{frame}
+\frametitle{Does It Help? Centralized A2C $\pm$ Agent Modeling}
+
+\begin{columns}[T,onlytextwidth]
+
+\begin{column}{0.42\textwidth}
+\centering
+\includegraphics[width=\linewidth]{media/lbf_9_22a.png}
+
+\vspace{0.3em}
+{\small \textbf{(a)} Environment: $8\times 8$ grid, two agents must
+cooperate to collect any item.}
+\end{column}
+
+\begin{column}{0.55\textwidth}
+\centering
+\includegraphics[width=\linewidth]{media/lbf_9_22b.png}
+
+\vspace{0.3em}
+{\small \textbf{(b)} Centralized A2C with and without
+representation-based agent models.}
+\end{column}
+
+\end{columns}
+
+\vspace{0.6em}
+\begin{itemize}
+    \item With agent models: faster learning, higher converged returns,
+    and lower variance across runs.
+\end{itemize}
+
+\vspace{0.2em}
+\centering
+{\small Figures taken from \cite{albrecht2024multi}.}
+
+\end{frame}
+
+% =========================================================
+% Takeaways
+% =========================================================
+\begin{frame}
+\frametitle{Agent Modeling: Takeaways}
+
+\begin{itemize}
+    \item Agent modeling makes the influence of other agents
+    \textbf{explicit} instead of implicit.
+    \item \textbf{JAL-AM with deep agent models:} reconstruct other
+    agents' policies with neural networks; select best responses via
+    model-weighted action values; sample $K$ joint actions to scale.
+    \item \textbf{Representation learning:} when policies are
+    unavailable, too complex, or changing, learn a compact embedding
+    $m_i^t$ with an encoder-decoder and condition the policy on it ---
+    works with \emph{any} MARL algorithm.
+\end{itemize}
+
+\end{frame}
