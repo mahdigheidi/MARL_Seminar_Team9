@@ -73,13 +73,14 @@
 }
 
 \begin{frame}
-\frametitle{Homogeneous agents}
-\framesubtitle{Motivation}
+\frametitle{Homogeneous agents: Motivation}
 
 Previously, we have seen environments and agents in which we have used independent learning algorithms such as DQN. Problem? The huge number of parameters and the slow training process.
 
+\vspace{0.5em}
+
 \centering
-\begin{adjustbox}{max width=\linewidth, max height=0.66\textheight}
+\begin{adjustbox}{max width=0.8\linewidth, max height=0.7\textheight}
 \begin{tikzpicture}[
     neuron/.style={
         circle,
@@ -135,13 +136,13 @@ Previously, we have seen environments and agents in which we have used independe
 \drawnetwork{2.6}{0.5}{0.8}{shared}
 
 % Multiple agent inputs
-\node (input1) at (1.0,1.5) {$h_1^t$};
-\node (input2) at (1.0,0.5) {$h_i^t$};
-\node (input3) at (1.0,-0.5) {$h_K^t$};
+% \node (input1) at (1.0,1.5) {$h_1^t$};
+% \node (input2) at (1.0,0.5) {$h_i^t$};
+% \node (input3) at (1.0,-0.5) {$h_K^t$};
 
-\draw[-{Latex}, thick] (input1) -- (shared-in-1);
-\draw[-{Latex}, thick] (input2) -- (shared-in-2);
-\draw[-{Latex}, thick] (input3) -- (shared-in-4);
+% \draw[-{Latex}, thick] (input1) -- (shared-in-1);
+% \draw[-{Latex}, thick] (input2) -- (shared-in-2);
+% \draw[-{Latex}, thick] (input3) -- (shared-in-4);
 
 \node[explanation] at (3.92,-2.6) {
     All agents use the same network\\[2pt]
@@ -166,7 +167,7 @@ Previously, we have seen environments and agents in which we have used independe
                 keepaspectratio
             ]{media/starcraft.png}\par
             \vspace{0.4em}
-            {\small\textbf{Agents with different roles, and usually different goals}}
+            {\small \textbf{Starcraft:} a game with Agents with different roles, and usually different goals}
         \end{column}
 
         \hfill
@@ -177,9 +178,9 @@ Previously, we have seen environments and agents in which we have used independe
             width=\linewidth,
             height=0.55\textheight,
             keepaspectratio
-        ]{media/grsim.png}\par
+        ]{media/robocup_simulation_helios.png}\par
         \vspace{0.4em}
-        {\small\textbf{The agent have the same actions to do, same goals and observations}}
+        {\small \textbf{Robocup Simulation:} The agents have the same action space, same goals and observation abilities, and are interchangeable}
         \end{column}
     \end{columns}
 \end{frame}
@@ -390,8 +391,8 @@ Both agents can move to the same location.
 \begin{tikzpicture}
 \useasboundingbox (-1.0,-2.4) rectangle (4.1,2.4);
 
-\node[agentdart]     (a4) at (0,1.2) {};
-\node[agenttriangle] (a5) at (3.1,-1.2) {};
+\node[agentdart]     (a4) at (0,1.9) {};
+\node[agenttriangle] (a5) at (3.1,-1.9) {};
 
 \node[location] (t1) at (0,0) {};
 \node[location] (t2) at (3.1,0) {};

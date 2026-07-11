@@ -261,20 +261,20 @@ $D_1, \ldots, D_n$
 
 \begin{columns}[T,onlytextwidth]
 
-\begin{column}{0.42\textwidth}
+\begin{column}{0.4\textwidth}
 \centering
-\includegraphics[width=\linewidth]{media/lbf_9_20a.png}
+\includegraphics[width=0.75\linewidth]{media/lbf_9_20a.png}
 
-\vspace{0.3em}
+\vspace{0.4em}
 {\small \textbf{(a)} Environment: $5\times 5$ grid, two agents must
 \emph{cooperate} to collect any item.}
 \end{column}
 
-\begin{column}{0.55\textwidth}
+\begin{column}{0.6\textwidth}
 \centering
-\includegraphics[width=\linewidth]{media/lbf_9_20b.png}
+\includegraphics[width=0.8\linewidth]{media/lbf_9_20b.png}
 
-\vspace{0.3em}
+% \vspace{0.3em}
 {\small \textbf{(b)} Learning curves of IDQN, JAL-AM (exact), and
 JAL-AM (sampled, $K = 10$).}
 \end{column}
@@ -282,15 +282,8 @@ JAL-AM (sampled, $K = 10$).}
 \end{columns}
 
 \vspace{0.6em}
-\begin{itemize}
-    \item IDQN fails to reliably collect items; JAL-AM succeeds.
-    \item The \emph{sampled} variant learns faster and more reliably
-    than the exact one.
-\end{itemize}
+{\small IDQN fails to reliably collect items; JAL-AM succeeds. The \emph{sampled} variant learns faster and more reliably than the exact one. Figures taken from \cite{albrecht2024multi}.}
 
-\vspace{0.2em}
-\centering
-{\small Figures taken from \cite{albrecht2024multi}.}
 
 \end{frame}
 
@@ -444,35 +437,29 @@ f^e(h_i^t; \psi_i^e);
 
 \begin{columns}[T,onlytextwidth]
 
-\begin{column}{0.42\textwidth}
+\begin{column}{0.35\textwidth}
 \centering
 \includegraphics[width=\linewidth]{media/lbf_9_22a.png}
 
 \vspace{0.3em}
 {\small \textbf{(a)} Environment: $8\times 8$ grid, two agents must
-cooperate to collect any item.}
+cooperate to collect any item. }
 \end{column}
 
-\begin{column}{0.55\textwidth}
+\begin{column}{0.65\textwidth}
 \centering
-\includegraphics[width=\linewidth]{media/lbf_9_22b.png}
+\includegraphics[width=0.85\linewidth]{media/lbf_9_22b.png}
 
 \vspace{0.3em}
 {\small \textbf{(b)} Centralized A2C with and without
-representation-based agent models.}
+representation-based agent models. Figures from \cite{albrecht2024multi}.}
 \end{column}
 
 \end{columns}
 
 \vspace{0.6em}
-\begin{itemize}
-    \item With agent models: faster learning, higher converged returns,
-    and lower variance across runs.
-\end{itemize}
-
-\vspace{0.2em}
-\centering
-{\small Figures taken from \cite{albrecht2024multi}.}
+{\small With agent models: faster learning, higher converged returns,
+    and lower variance across runs.}
 
 \end{frame}
 

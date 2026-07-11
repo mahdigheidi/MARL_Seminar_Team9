@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.11)  11 JUL 2026 15:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.11)  11 JUL 2026 16:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1231,94 +1231,91 @@ Package pdftex.def Info: media/ufr_logo.pdf  used on input line 252.
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 295.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 288.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 <media/lbf_9_20a.png, id=154, 733.74126pt x 718.685pt>
 File: media/lbf_9_20a.png Graphic file (type png)
 <use media/lbf_9_20a.png>
-Package pdftex.def Info: media/lbf_9_20a.png  used on input line 295.
-(pdftex.def)             Requested size: 180.04759pt x 176.34804pt.
+Package pdftex.def Info: media/lbf_9_20a.png  used on input line 288.
+(pdftex.def)             Requested size: 128.60402pt x 125.95818pt.
 <media/lbf_9_20b.png, id=156, 1764.5925pt x 1135.24126pt>
 File: media/lbf_9_20b.png Graphic file (type png)
 <use media/lbf_9_20b.png>
-Package pdftex.def Info: media/lbf_9_20b.png  used on input line 295.
-(pdftex.def)             Requested size: 235.77896pt x 151.67462pt.
-
-Overfull \vbox (53.10435pt too high) detected at line 295
- []
-
+Package pdftex.def Info: media/lbf_9_20b.png  used on input line 288.
+(pdftex.def)             Requested size: 205.77246pt x 132.3775pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 295.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 288.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
-[10
+ [10
 
  <./media/lbf_9_20a.png> <./media/lbf_9_20b.png>]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 329.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 322.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 329.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 322.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
- [11
+
+[11
 
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 394.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 387.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 394.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 387.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
  [12
 
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 435.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 428.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 435.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 428.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
  [13
 
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 477.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 464.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 <media/lbf_9_22a.png, id=194, 505.89pt x 504.88625pt>
 File: media/lbf_9_22a.png Graphic file (type png)
 <use media/lbf_9_22a.png>
-Package pdftex.def Info: media/lbf_9_22a.png  used on input line 477.
-(pdftex.def)             Requested size: 180.04759pt x 179.69424pt.
+Package pdftex.def Info: media/lbf_9_22a.png  used on input line 464.
+(pdftex.def)             Requested size: 150.04294pt x 149.74905pt.
 <media/lbf_9_22b.png, id=195, 961.5925pt x 603.25375pt>
 File: media/lbf_9_22b.png Graphic file (type png)
 <use media/lbf_9_22b.png>
-Package pdftex.def Info: media/lbf_9_22b.png  used on input line 477.
-(pdftex.def)             Requested size: 235.77896pt x 147.91351pt.
+Package pdftex.def Info: media/lbf_9_22b.png  used on input line 464.
+(pdftex.def)             Requested size: 236.84883pt x 148.58548pt.
 
-Overfull \vbox (44.45056pt too high) detected at line 477
+Overfull \vbox (8.56096pt too high) detected at line 464
  []
 
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 477.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 464.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 [14
 
  <./media/lbf_9_22a.png> <./media/lbf_9_22b.png>]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 497.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 484.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 497.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 484.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
  [15
 
@@ -1342,160 +1339,160 @@ Package pdftex.def Info: media/ufr_logo.pdf  used on input line 1.
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 154.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 155.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 154.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 155.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
  [17
 
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 185.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 186.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 <media/starcraft.png, id=235, 1264.725pt x 846.16125pt>
 File: media/starcraft.png Graphic file (type png)
 <use media/starcraft.png>
-Package pdftex.def Info: media/starcraft.png  used on input line 185.
+Package pdftex.def Info: media/starcraft.png  used on input line 186.
 (pdftex.def)             Requested size: 204.09697pt x 136.55058pt.
-<media/grsim.png, id=236, 752.8125pt x 423.08063pt>
-File: media/grsim.png Graphic file (type png)
-<use media/grsim.png>
-Package pdftex.def Info: media/grsim.png  used on input line 185.
-(pdftex.def)             Requested size: 205.76625pt x 115.64063pt.
+<media/robocup_simulation_helios.png, id=236, 853.1875pt x 598.235pt>
+File: media/robocup_simulation_helios.png Graphic file (type png)
+<use media/robocup_simulation_helios.png>
+Package pdftex.def Info: media/robocup_simulation_helios.png  used on input lin
+e 186.
+(pdftex.def)             Requested size: 194.75789pt x 136.55965pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 185.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 186.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
  [18
 
- <./media/starcraft.png> <./media/grsim.png>]
+ <./media/starcraft.png> <./media/robocup_simulation_helios.png>]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 251.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 252.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 251.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 252.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
-
-[19
+ [19
 
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 308.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 309.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 308.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 309.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
  [20
 
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 421.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 422.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 421.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 422.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
  [21
 
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 509.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 510.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 509.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 510.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
  [22
 
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 557.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 558.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 557.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 558.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
  [23
 
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 572.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 573.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
-<media/lbf_param_share.png, id=284, 763.85374pt x 506.89375pt>
+<media/lbf_param_share.png, id=285, 763.85374pt x 506.89375pt>
 File: media/lbf_param_share.png Graphic file (type png)
 <use media/lbf_param_share.png>
-Package pdftex.def Info: media/lbf_param_share.png  used on input line 572.
+Package pdftex.def Info: media/lbf_param_share.png  used on input line 573.
 (pdftex.def)             Requested size: 231.96684pt x 153.93332pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 572.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 573.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
  [24
 
  <./media/lbf_param_share.png>]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 585.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 586.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 585.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 586.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
- [25
+
+[25
 
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 684.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 685.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 684.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 685.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
  [26
 
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 710.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 711.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 710.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 711.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
  [27
 
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 752.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 753.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 752.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 753.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
-
-[28
+ [28
 
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 804.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 805.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 804.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 805.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
  [29
 
@@ -1531,7 +1528,8 @@ File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
 Package pdftex.def Info: media/ufr_logo.pdf  used on input line 25.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
- (./slides.bbl) [32
+
+(./slides.bbl) [32
 
 ]
 \tf@nav=\write6
@@ -1543,8 +1541,7 @@ Package pdftex.def Info: media/ufr_logo.pdf  used on input line 25.
 \tf@snm=\write8
 \openout8 = `slides.snm'.
 
-
-(./slides.aux)
+ (./slides.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1553,10 +1550,10 @@ Package rerunfilecheck Info: File `slides.out' has not changed.
 (rerunfilecheck)             Checksum: B6BE56B6353F5223565791C3640B0A03;1337.
  ) 
 Here is how much of TeX's memory you used:
- 30109 strings out of 469006
- 601361 string characters out of 5454813
- 1073512 words of memory out of 5000000
- 58132 multiletter control sequences out of 15000+600000
+ 30085 strings out of 469006
+ 601098 string characters out of 5454813
+ 1068162 words of memory out of 5000000
+ 58108 multiletter control sequences out of 15000+600000
  644644 words of font info for 102 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  101i,17n,107p,381b,1191s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1597,9 +1594,9 @@ cal/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
 /local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
 usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
 >
-Output written on slides.pdf (32 pages, 3734657 bytes).
+Output written on slides.pdf (32 pages, 3250624 bytes).
 PDF statistics:
- 517 PDF objects out of 1000 (max. 8388607)
+ 518 PDF objects out of 1000 (max. 8388607)
  357 compressed objects within 4 object streams
  76 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
