@@ -1,4 +1,100 @@
 \section{Summary}
+
+% =========================================================
+% (A) Organizing frame: training & execution paradigms
+% =========================================================
+\begin{frame}
+\frametitle{Chapter 9 --- The Big Picture}
+\framesubtitle{Training \& execution paradigms}
+
+Across all of Chapter 9, algorithms differ in \emph{what information is shared,
+and when.} \textbf{Centralized information} is anything beyond an agent's own
+observation --- parameters, gradients, observations, or actions of others.
+
+\vspace{0.6em}
+\centering
+\begin{tikzpicture}[
+    every node/.style={font=\small},
+    para/.style={
+        rectangle, rounded corners=4pt, very thick,
+        align=center, inner sep=6pt,
+        text width=3.0cm, minimum height=1.9cm
+    },
+    cte/.style={para, draw=blue!55!black, fill=blue!8},
+    dte/.style={para, draw=green!55!black, fill=green!8},
+    ctde/.style={para, draw=orange!85!black, fill=orange!10}
+]
+
+\node[dte] (dte) at (0,0)
+    {\textbf{Decentralized training \& execution} \\ {\scriptsize agents fully isolated; learn from local observations only}};
+
+\node[ctde] (ctde) at (4.5,0)
+    {\textbf{Centralized training, decentralized exec.\ (CTDE)} \\ {\scriptsize share info at \emph{training}; act on local obs.\ at execution}};
+
+\node[cte] (cte) at (9.0,0)
+    {\textbf{Centralized training \& execution} \\ {\scriptsize share info throughout both training \emph{and} execution}};
+
+% spectrum arrow underneath
+\draw[{Latex}-{Latex}, thick, black!55]
+    ($(dte.south)+(0,-0.35)$) -- ($(cte.south)+(0,-0.35)$);
+\node[font=\scriptsize, text=black!60] at ($(dte.south)+(0,-0.65)$) {less sharing};
+\node[font=\scriptsize, text=black!60] at ($(cte.south)+(0,-0.65)$) {more sharing};
+
+\end{tikzpicture}
+
+\vspace{0.5em}
+{\small CTDE is the popular middle ground: exploit centralized information to
+\emph{learn} better, keep policies deployable with only local information.}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Chapter 9 --- Four Recurring Challenges}
+
+Deep MARL is largely the story of \emph{four} core challenges --- each section
+attacks one or more of them:
+
+\vspace{0.4em}
+\begin{columns}[T,onlytextwidth]
+
+\begin{column}{0.48\textwidth}
+\begin{block}{Non-stationarity}
+\small Others learn and change $\Rightarrow$ a moving target.
+\emph{Centralized critics (9.4), agent modeling (9.6).}
+\end{block}
+
+\begin{block}{Multi-agent credit assignment}
+\small Who caused the shared reward?
+\emph{Value decomposition --- VDN, QMIX (9.5).}
+\end{block}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+\begin{block}{Scaling \& sample efficiency}
+\small Cost grows with the number of agents.
+\emph{Parameter \& experience sharing (9.7).}
+\end{block}
+
+\begin{block}{Equilibrium selection}
+\small Which joint policy to converge to?
+\emph{Self-play (9.8), population-based training (9.9).}
+\end{block}
+\end{column}
+
+\end{columns}
+
+\vspace{0.8em}
+\centering
+\emph{Partial observability} cuts across all four --- handled throughout via
+observation histories $h_i^t$ and centralized information $z^t$.
+
+
+
+\end{frame}
+
+% =========================================================
+% (B) The section-by-section table (refined)
+% =========================================================
 \begin{frame}
 \frametitle{What did we discuss in Chapter 9?}
 
@@ -11,7 +107,7 @@
 >{\raggedright\arraybackslash}X
 }
 \toprule
-Section & Technique & Challenge addressed (from Ch. 5) \\
+Section & Technique & Challenge addressed \\
 \midrule
 
 9.3 Independent Learning
@@ -32,14 +128,14 @@ Credit assignment, non-stationarity (training)
 &
 VDN, QMIX
 &
-Credit assignment, at scale
+Multi-agent credit assignment, at scale
 \\
 
 9.6 Agent Modeling
 &
 Deep JAL-AM, representations
 &
-Non-stationarity, coordination with diverse agents
+Reason about \& adapt to other agents; generalize to unseen states
 \\
 
 9.7 Homogeneous Agents
@@ -66,4 +162,13 @@ Equilibrium-finding \& robustness, general competitive
 \bottomrule
 \end{tabularx}
 
+\vspace{0.6em}
+{\footnotesize All build on the same paradigms (decentralized / CTDE /
+centralized) --- they differ in \emph{what} is shared and \emph{which}
+challenge it targets.}
+
 \end{frame}
+
+% =========================================================
+% (C) Closing big-picture: challenges -> techniques
+% =========================================================

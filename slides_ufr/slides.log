@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.11)  11 JUL 2026 17:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.11)  11 JUL 2026 17:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1515,20 +1515,42 @@ Package pdftex.def Info: media/ufr_logo.pdf  used on input line 1.
 ]
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 69.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 49.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
-Package pdftex.def Info: media/ufr_logo.pdf  used on input line 69.
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 49.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
  [31
+
+]
+File: media/ufr_logo.pdf Graphic file (type pdf)
+<use media/ufr_logo.pdf>
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 93.
+(pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
+File: media/ufr_logo.pdf Graphic file (type pdf)
+<use media/ufr_logo.pdf>
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 93.
+(pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
+ [32
+
+]
+File: media/ufr_logo.pdf Graphic file (type pdf)
+<use media/ufr_logo.pdf>
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 170.
+(pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
+File: media/ufr_logo.pdf Graphic file (type pdf)
+<use media/ufr_logo.pdf>
+Package pdftex.def Info: media/ufr_logo.pdf  used on input line 170.
+(pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
+ [33
 
 ])
 File: media/ufr_logo.pdf Graphic file (type pdf)
 <use media/ufr_logo.pdf>
 Package pdftex.def Info: media/ufr_logo.pdf  used on input line 25.
 (pdftex.def)             Requested size: 69.37317pt x 7.77774pt.
- (./slides.bbl) [32
+ (./slides.bbl) [34
 
 ]
 \tf@nav=\write6
@@ -1540,7 +1562,8 @@ Package pdftex.def Info: media/ufr_logo.pdf  used on input line 25.
 \tf@snm=\write8
 \openout8 = `slides.snm'.
 
- (./slides.aux)
+
+(./slides.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1549,11 +1572,11 @@ Package rerunfilecheck Info: File `slides.out' has not changed.
 (rerunfilecheck)             Checksum: B6BE56B6353F5223565791C3640B0A03;1337.
  ) 
 Here is how much of TeX's memory you used:
- 30116 strings out of 469006
- 601823 string characters out of 5454813
- 1069132 words of memory out of 5000000
- 58139 multiletter control sequences out of 15000+600000
- 644938 words of font info for 103 fonts, out of 8000000 for 9000
+ 30162 strings out of 469006
+ 602536 string characters out of 5454813
+ 1069202 words of memory out of 5000000
+ 58181 multiletter control sequences out of 15000+600000
+ 645289 words of font info for 104 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  101i,17n,107p,381b,1191s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/mahdigheidi/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jkna
@@ -1593,10 +1616,10 @@ cal/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
 /local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
 usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
 >
-Output written on slides.pdf (32 pages, 3252152 bytes).
+Output written on slides.pdf (34 pages, 3261517 bytes).
 PDF statistics:
- 520 PDF objects out of 1000 (max. 8388607)
- 358 compressed objects within 4 object streams
- 76 named destinations out of 1000 (max. 500000)
+ 535 PDF objects out of 1000 (max. 8388607)
+ 369 compressed objects within 4 object streams
+ 80 named destinations out of 1000 (max. 500000)
  163 words of extra memory for PDF output out of 10000 (max. 10000000)
 
