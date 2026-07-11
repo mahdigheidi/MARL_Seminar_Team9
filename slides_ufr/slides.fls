@@ -755,6 +755,8 @@ INPUT ./media/ufr_logo.pdf
 INPUT ./media/ufr_logo.pdf
 INPUT ./media/ufr_logo.pdf
 INPUT ./media/ufr_logo.pdf
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
 INPUT ./media/ufr_logo.pdf
 INPUT ./media/ufr_logo.pdf
 INPUT ./media/ufr_logo.pdf
@@ -783,8 +785,6 @@ INPUT ./media/ufr_logo.pdf
 INPUT ./media/ufr_logo.pdf
 INPUT ./media/ufr_logo.pdf
 INPUT ./media/ufr_logo.pdf
-INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
-INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
 INPUT ./media/ufr_logo.pdf
 INPUT ./media/ufr_logo.pdf
 INPUT ./media/ufr_logo.pdf

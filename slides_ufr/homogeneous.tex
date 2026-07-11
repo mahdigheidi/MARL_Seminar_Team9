@@ -805,4 +805,29 @@ $}
     corrected via importance sampling --- this is what makes experience
     sharing possible in an \emph{on-policy} setting.
 \end{itemize}
+
+\vspace{0.4em}
+\begin{center}
+\begin{tikzpicture}[>=Latex]
+    % gradient bar from own-color (0) to shared-color (1)
+    \shade[left color=seacown, right color=seacshared]
+        (0,0) rectangle (7,0.35);
+    \draw[thick] (0,0) rectangle (7,0.35);
+
+    % end ticks and numeric labels
+    \draw[thick] (0,0) -- (0,-0.12);
+    \draw[thick] (7,0) -- (7,-0.12);
+    \node[below, font=\small] at (0,-0.12) {$\lambda = 0$};
+    \node[below, font=\small] at (7,-0.12) {$\lambda = 1$};
+
+    % descriptive captions under each end
+    \node[below, font=\scriptsize, text=seacown,   align=center] at (0,-0.55)
+        {no sharing};
+    \node[below, font=\scriptsize, text=seacshared, align=center] at (7,-0.55)
+        {others' experience\\treated as own};
+
+    % lambda label above the bar
+    \node[above, font=\small] at (3.5,0.35) {$\lambda$};
+\end{tikzpicture}
+\end{center}
 \end{frame}
