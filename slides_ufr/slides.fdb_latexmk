@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex slides"] 1783776791.49806 "slides.aux" "slides.bbl" "slides" 1783778916.16364 0
+["bibtex slides"] 1783779057.6232 "slides.aux" "slides.bbl" "slides" 1783780439.3742 0
   "./refs.bib" 1783776452.24517 714 799fba987a9a6ad5eb3dbd0887de1713 ""
   "/usr/local/texlive/2026basic/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
-  "slides.aux" 1783778916.02348 7748 81dd06c5448e122e922163cf3988eb3b "pdflatex"
+  "slides.aux" 1783780439.17509 7748 fb334f0c744408fa41e349c00c22c1b7 "pdflatex"
   (generated)
   "slides.bbl"
   "slides.blg"
   (rewritten before read)
-["pdflatex"] 1783778914.08209 "slides.tex" "slides.pdf" "slides" 1783778916.16377 0
+["pdflatex"] 1783780437.20104 "slides.tex" "slides.pdf" "slides" 1783780439.37432 0
   "/Users/mahdigheidi/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss0900.600pk" 1783776788.69518 9524 562c4c1662aaa9abafa8739ce9696fda ""
   "/Users/mahdigheidi/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1000.600pk" 1783776789.01652 10604 7374de895af132eabe629d813259f910 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/jknappen/ec/tcss0900.tfm" 1136768653 1536 ba0169ee8bc017972775b933313cbbb0 ""
@@ -276,9 +276,9 @@
   "/usr/local/texlive/2026basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1783776433 79187 e3f5941707347d15c1721f52279213a2 ""
   "/usr/local/texlive/2026basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1783776411 2966196 615f8f6e48cae68522372f888fe7bb13 ""
   "/usr/local/texlive/2026basic/texmf.cnf" 1772405582 628 bbc09d6d38872d53c11bb48dc9b14e88 ""
-  "agent_modeling.tex" 1783778243.14412 15533 35fbfb30826a07691917ecea49dc9984 ""
+  "agent_modeling.tex" 1783779695.49022 16225 5a941b95a50409ebe2331ca76e7d3619 ""
   "defs.tex" 1783776406.79576 2245 a8b2f088a3ffebd0d3c7cc4a79ede591 ""
-  "homogeneous.tex" 1783778913.45751 23110 170cc0dd6a9668ca636686f7c3420a82 ""
+  "homogeneous.tex" 1783780436.98184 23184 8404135369492e4282ca190fd2a86046 ""
   "media/lbf_9_20a.png" 1783776525.24965 61255 fe16539d1590c2dd07d81b482fdb2959 ""
   "media/lbf_9_20b.png" 1783776525.25144 515291 24b2a42594cbf53d95c228bc6e8e15bf ""
   "media/lbf_9_22a.png" 1783776525.25212 22179 4ff7d88bff505f9680cb709d1e5c661e ""
@@ -289,12 +289,12 @@
   "media/title_bg.pdf" 1783776525.25828 647922 43b6443fe8752ac786764bcd04a459d9 ""
   "media/ufr_logo.pdf" 1783776525.25874 9401 1db64d7f1a752df23bb8365abbdd1dca ""
   "media/ufr_stamp.pdf" 1783776525.25906 92014 aeb67a98f4a4eebb0a9b4339ae6012b4 ""
-  "slides.aux" 1783778916.02348 7748 81dd06c5448e122e922163cf3988eb3b "pdflatex"
-  "slides.bbl" 1783776791.51012 713 ef9333dbd52515cb08c20e378209f2e1 "bibtex slides"
-  "slides.nav" 1783778916.02447 4802 f98c6f5c4fcd51d341d69a359168629a "pdflatex"
-  "slides.out" 1783778916.02428 1337 b6be56b6353f5223565791c3640b0a03 "pdflatex"
+  "slides.aux" 1783780439.17509 7748 fb334f0c744408fa41e349c00c22c1b7 "pdflatex"
+  "slides.bbl" 1783779057.63871 713 ef9333dbd52515cb08c20e378209f2e1 "bibtex slides"
+  "slides.nav" 1783780439.17618 4802 f98c6f5c4fcd51d341d69a359168629a "pdflatex"
+  "slides.out" 1783780439.17602 1337 b6be56b6353f5223565791c3640b0a03 "pdflatex"
   "slides.tex" 1783776762.46226 640 d525cfb7de7dce515b19a59270cfc5f1 ""
-  "slides.toc" 1783778916.0245 500 3b2499e62938f4f9661f055858a391e7 "pdflatex"
+  "slides.toc" 1783780439.17621 500 3b2499e62938f4f9661f055858a391e7 "pdflatex"
   "summary.tex" 1783776484.65506 973 83ee1932d5159ea98644bc0ae8448d9b ""
   "ufrslides.sty" 1783776472.86559 2920 a436d05a96cc1ac5534b99f438d791e6 ""
   (generated)

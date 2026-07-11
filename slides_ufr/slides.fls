@@ -591,6 +591,7 @@ INPUT ./media/lbf_9_22a.png
 INPUT ./media/lbf_9_22a.png
 INPUT ./media/lbf_9_22a.png
 INPUT ./media/lbf_9_22a.png
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT ./media/lbf_9_22b.png
 INPUT ./media/lbf_9_22b.png
 INPUT ./media/lbf_9_22b.png

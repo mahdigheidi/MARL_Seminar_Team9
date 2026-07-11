@@ -437,31 +437,54 @@ f^e(h_i^t; \psi_i^e);
 
 \begin{columns}[T,onlytextwidth]
 
-\begin{column}{0.35\textwidth}
+\begin{column}{0.3\textwidth}
 \centering
-\includegraphics[width=\linewidth]{media/lbf_9_22a.png}
+\includegraphics[width=0.9\linewidth, height=0.8\textheight,
+    keepaspectratio]{media/lbf_9_22a.png}
 
-\vspace{0.3em}
-{\small \textbf{(a)} Environment: $8\times 8$ grid, two agents must
-cooperate to collect any item. }
+{\footnotesize \textbf{(a)} Environment: $8\times 8$ grid, two agents
+must cooperate to collect any item.}
 \end{column}
 
-\begin{column}{0.65\textwidth}
+\begin{column}{0.7\textwidth}
 \centering
-\includegraphics[width=0.85\linewidth]{media/lbf_9_22b.png}
+\begin{tikzpicture}
+    % the figure as a node
+    \node[inner sep=0pt] (fig22b) {%
+        \includegraphics[width=0.8\linewidth, height=0.5\textheight,
+            keepaspectratio]{media/lbf_9_22b.png}%
+    };
+    % callout box in the upper-right area of the plot (empty region)
+    \node[
+        anchor=north east,
+        draw=green!55!black,
+        fill=green!8,
+        rounded corners=3pt,
+        thick,
+        align=left,
+        font=\scriptsize,
+        inner sep=5pt
+    ] at ($(fig22b.north east)+(0.55,0.85)$) {%
+        \textbf{With agent models:}\\[1pt]
+        \textcolor{green!55!black}{$\bullet$}~Faster learning\\
+        \textcolor{green!55!black}{$\bullet$}~Higher converged returns\\
+        \textcolor{green!55!black}{$\bullet$}~Lower variance%
+    };
+\end{tikzpicture}
 
-\vspace{0.3em}
-{\small \textbf{(b)} Centralized A2C with and without
-representation-based agent models. Figures from \cite{albrecht2024multi}.}
+{\footnotesize \textbf{(b)} Centralized A2C with and without
+representation-based agent models.}
 \end{column}
 
 \end{columns}
 
-\vspace{0.6em}
-{\small With agent models: faster learning, higher converged returns,
-    and lower variance across runs.}
+\vspace{0.4em}
+\centering
+{\footnotesize Figures taken from \cite{albrecht2024multi}.}
 
 \end{frame}
+
+
 
 % =========================================================
 % Takeaways

@@ -425,9 +425,12 @@ But if we have homogeneity, how can we use this for our gain?
 \subsection{Parameter Sharing}
 \begin{frame}
     \frametitle{Parameter sharing}
-    When having strongly homogeneous agents, we know that all agents use identical policies. So do we need to keep different parameters for each? Answer is NO
+\begin{block}{}
+    When having strongly homogeneous agents, we know that all agents use identical policies. So do we need to keep different parameters for each?
+\end{block}
+\vspace{1em}
     \centering
-\begin{adjustbox}{max width=0.95\textwidth,max height=0.6\textheight}
+\begin{adjustbox}{max width=\textwidth,max height=0.6\textheight}
 \begin{tikzpicture}[
     >=Latex,
     every node/.style={font=\large},
@@ -471,7 +474,7 @@ But if we have homogeneity, how can we use this for our gain?
 \node[valuebox] (vn) at (2.6,1.1) {$V(\cdot;\theta_n)$};
 
 \draw[arrow] (h1v) -- (v1.west);
-\draw[arrow] (dotsv) -- (v2.west);
+% \draw[arrow] (dotsv) -- (v2.west);
 \draw[arrow] (hnv) -- (vn.west);
 
 % =====================================================
@@ -486,7 +489,7 @@ But if we have homogeneity, how can we use this for our gain?
 \node[policybox] (pn) at (2.6,-2.8) {$\pi(\cdot;\phi_n)$};
 
 \draw[arrow] (h1p) -- (p1.west);
-\draw[arrow] (dotsp) -- (p2.west);
+% \draw[arrow] (dotsp) -- (p2.west);
 \draw[arrow] (hnp) -- (pn.west);
 
 % =====================================================
@@ -595,19 +598,19 @@ policies?
         rectangle, rounded corners=2pt,
         draw=cardborder, thick,
         fill=cardfill,
-        minimum width=2.6cm, minimum height=0.45cm,
+        minimum width=3.6cm, minimum height=0.45cm,
         font=\scriptsize, align=center
     },
     shadowcard/.style={
         rectangle, rounded corners=2pt,
         draw=cardborder!50, thin,
         fill=cardfill!60!white,
-        minimum width=2.6cm, minimum height=0.45cm
+        minimum width=3.6cm, minimum height=0.45cm
     },
     container/.style={
         rectangle, rounded corners=6pt,
         draw=black, thick,
-        minimum width=3.0cm
+        minimum width=4.0cm
     },
     sharedcontainer/.style={
         rectangle, rounded corners=6pt,
@@ -617,7 +620,7 @@ policies?
     },
     title/.style={font=\bfseries\large, align=center},
     dots/.style={font=\large},
-    caption/.style={align=center, font=\small, text width=3.6cm}
+    caption/.style={align=center, font=\large, text width=5.5cm}
 ]
 
 % =====================================================
@@ -628,9 +631,9 @@ policies?
 % ---- Buffer 1 (Agent 1) ----
 \node[shadowcard] at (-4.3,2.56) {};
 \node[shadowcard] at (-4.4,2.49) {};
-\node[card] (b1t) at (-4.5,2.42) {$(s_1,a_1,r_1,s_1')$};
+\node[card] (b1t) at (-4.5,2.42) {$(s_1,a_1,r_1,s_2')$};
 \node[dots] (b1d) at (-4.5,1.9) {$\vdots$};
-\node[card] (b1b) at (-4.5,1.38) {$(s_2,a_2,r_2,s_2')$};
+\node[card] (b1b) at (-4.5,1.38) {$(s_{k},a_{k},r_{k},s_{k+1}')$};
 \begin{pgfonlayer}{background}
 \node[container, fit=(b1t)(b1b), inner sep=6pt] (buf1) {};
 \end{pgfonlayer}
@@ -639,9 +642,9 @@ policies?
 % ---- Buffer 2 (Agent 2) ----
 \node[shadowcard] at (-4.3,0.16) {};
 \node[shadowcard] at (-4.4,0.09) {};
-\node[card] (b2t) at (-4.5,0.02) {$(s_1,a_1,r_1,s_1')$};
+\node[card] (b2t) at (-4.5,0.02) {$(s_1,a_1,r_1,s_2')$};
 \node[dots] (b2d) at (-4.5,-0.5) {$\vdots$};
-\node[card] (b2b) at (-4.5,-1.02) {$(s_2,a_2,r_2,s_2')$};
+\node[card] (b2b) at (-4.5,-1.02) {$(s_{k},a_{k},r_{k},s_{k+1}')$};
 \begin{pgfonlayer}{background}
 \node[container, fit=(b2t)(b2b), inner sep=6pt] (buf2) {};
 \end{pgfonlayer}
@@ -652,15 +655,15 @@ policies?
 % ---- Buffer 3 (Agent K) ----
 \node[shadowcard] at (-4.3,-2.64) {};
 \node[shadowcard] at (-4.4,-2.71) {};
-\node[card] (b3t) at (-4.5,-2.78) {$(s_1,a_1,r_1,s_1')$};
+\node[card] (b3t) at (-4.5,-2.78) {$(s_1,a_1,r_1,s_2')$};
 \node[dots] (b3d) at (-4.5,-3.3) {$\vdots$};
-\node[card] (b3b) at (-4.5,-3.82) {$(s_2,a_2,r_2,s_2')$};
+\node[card] (b3b) at (-4.5,-3.82) {$(s_{k},a_{k},r_{k},s_{k+1}')$};
 \begin{pgfonlayer}{background}
 \node[container, fit=(b3t)(b3b), inner sep=6pt] (buf3) {};
 \end{pgfonlayer}
 \node[font=\small] at (buf3.west) [anchor=east, xshift=-4pt] {Agent $K$};
 
-\node[caption] at (-4.5,-4.9) {Each agent stores transitions in its own replay buffer};
+\node[caption] at (-4.5,-5.5) {Each agent stores transitions in its own replay buffer};
 
 % =====================================================
 % RIGHT: shared replay buffer
@@ -669,11 +672,11 @@ policies?
 
 \node[shadowcard] at (4.4,1.76) {};
 \node[shadowcard] at (4.35,1.69) {};
-\node[card] (s1) at (4.3,1.62) {$(s_1,a_1,r_1,s_1')$};
-\node[card] (s2) at (4.3,1.10) {$(s_2,a_2,r_2,s_2')$};
+\node[card] (s1) at (4.3,1.62) {$(s_1,a_1,r_1,s_2')$};
+\node[card] (s2) at (4.3,1.10) {$(s_2,a_2,r_2,s_3')$};
 \node[dots]      at (4.3,0.60) {$\vdots$};
-\node[card] (s3) at (4.3,0.10) {$(s_3,a_3,r_3,s_3')$};
-\node[card] (s4) at (4.3,-0.42) {$(s_4,a_4,r_4,s_4')$};
+\node[card] (s3) at (4.3,0.10) {$(s_{k-1},a_{k-1},r_{k-1},s_k')$};
+\node[card] (s4) at (4.3,-0.42) {$(s_k,a_k,r_k,s_{k+1}')$};
 \begin{pgfonlayer}{background}
 \node[sharedcontainer, fit=(s1)(s4), inner sep=7pt] (shared) {};
 \end{pgfonlayer}
