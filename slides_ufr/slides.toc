@@ -1,8 +1,0 @@
-\beamer@sectionintoc {1}{Agent Modeling with Neural Networks}{2}{0}{1}
-\beamer@subsectionintoc {1}{1}{Joint action learning}{4}{0}{1}
-\beamer@subsectionintoc {1}{2}{Learning representations}{11}{0}{1}
-\beamer@sectionintoc {2}{Environments with Homogeneous Agents}{16}{0}{2}
-\beamer@subsectionintoc {2}{1}{Homogeneous Agents}{17}{0}{2}
-\beamer@subsectionintoc {2}{2}{Parameter Sharing}{22}{0}{2}
-\beamer@subsectionintoc {2}{3}{Experience Sharing}{25}{0}{2}
-\beamer@sectionintoc {3}{Summary}{30}{0}{3}
