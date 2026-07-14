@@ -210,7 +210,7 @@ $\rightarrow$ Cannot observe other agents' actions\\[0.20em]
 
 \definecolor{zhcolor}{RGB}{45,88,140}
 
-\vspace{-3.60em}
+\vspace{-2.50em}
 \centering
 \begin{tikzpicture}[
     >=Latex,
@@ -246,6 +246,7 @@ $\rightarrow$ Cannot observe other agents' actions\\[0.20em]
 ]
 
 % Left: algorithm image with four static highlights.
+\begin{scope}[yshift=-5mm]
 \begin{scope}[x=5.62cm,y=6.34cm,yshift=-0.22cm]
     \node[anchor=south west, inner sep=0pt] (algimg) at (0,0) {%
         \IfFileExists{media/deep_jalam_training.png}{%
@@ -269,6 +270,7 @@ $\rightarrow$ Cannot observe other agents' actions\\[0.20em]
     \coordinate (h2) at (0.895,0.813);
 \end{scope}
 \draw[gray!35, thin] (0,-0.22) rectangle (5.62,6.12);
+\end{scope}
 
 % Right: explanations for points 1 and 2.
 \node[block, anchor=north west, text width=6.25cm, minimum height=2.52cm] (agentblock) at (6.35,5.95) {%
@@ -963,14 +965,15 @@ without modifying the overall A2C framework.}
 \hspace*{-0.04\linewidth}{\setlength{\fboxsep}{4pt}%
 \fcolorbox{green!35!black}{green!5}{%
 \begin{minipage}[t][3.20cm][t]{0.96\linewidth}
+\vspace{0.34cm}
 {\color{green!45!black}\bfseries\small With Agent Modeling}
 
 \vspace{0.42em}
 {\small
 \textbullet\ Learns faster\\[0.28em]
 \textbullet\ Higher final return\\[0.28em]
-\textbullet\ More consistent learning\\[-0.02em]
-\hspace*{0.86em}{{\fontsize{7.8}{9.0}\selectfont Lower variance across runs.}}}
+\textbullet\ More consistent learning\\[-0.18em]
+\hspace*{0.86em}{Lower variance across runs.}}
 \end{minipage}}}
 \end{column}
 \end{columns}
